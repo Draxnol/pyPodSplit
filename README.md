@@ -1,6 +1,6 @@
 # pyPodSplit
 small python script to split long audio files into smaller files.
-# python console tic tac toe
+# python console audio files splitter
 
 Git clone the repository or download the zip from github.com
 ### Prerequisites
