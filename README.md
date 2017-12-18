@@ -26,7 +26,7 @@ Open it using python 3
 ```
 Python3 main.py
 ```
-### After Running coordinates follow on screen intructions
+### After Running main.py follow on screen intructions
 ```
 Currently script needs to be in the same dir as the audio file.
 only supports exporting as mp3 files.
