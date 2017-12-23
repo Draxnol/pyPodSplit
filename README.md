@@ -15,7 +15,7 @@ Python 3
 ### Installing
 Git clone to a directory or download the zip file and extract it to a directory.
 ### Running
-First step, Open up a terminal window or cmd and browse to were you extracted the python file to.
+First step, Open up a terminal window or cmd and browse to where you extracted the directory too.
 
 ```
 cd ~/Desktop
@@ -24,9 +24,10 @@ cd ~/Desktop
 Open it using python 3
 
 ```
-Python3 main.py
+Python3 /multiScript/audioSpliter.py or python3 /multiScript/pyPodSplit.py 
+
 ```
-### After Running main.py follow on screen intructions
+### After Running one of the above scripts follow on screen intructions
 ```
 Currently script needs to be in the same dir as the audio file.
 only supports exporting as mp3 files.
