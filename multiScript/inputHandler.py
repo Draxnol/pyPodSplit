@@ -1,6 +1,9 @@
 class inputHandler():
 	def __init__(self):
 		self.filename = ''
+	def determineAutoOrManual(self):
+		choice = input('Would you like to manually enter information or use a file? man or auto \n')
+		return choice
 	def getFileName(self):
 		name = input('please enter file name: \n')
 		return name

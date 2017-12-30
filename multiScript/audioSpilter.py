@@ -1,10 +1,18 @@
+import fileReader
 import inputHandler
 import fileHandler
 import os
 
 inputStuff = inputHandler.inputHandler()
 fileStuff = fileHandler.FileHandler()
-
+def getMode():
+	mode = inputStuff.determineAutoOrManual()
+	if mode == 'man':
+		getFileInfo()
+		loadAudioFile()
+	elif mode =='auto':
+		fileProcesser = fileReader.FileReader()
+		fileProcesser.processFile(inputStuff.getFileName())
 def getFileInfo():
 	filename = inputStuff.getFileName()
 	if os.path.isfile(filename):
@@ -19,6 +27,4 @@ def loadAudioFile():
 		print('error: not an audio file')
 		getFileInfo()
 	fileStuff.splitFile(inputStuff.getSplitTimes())
-
-getFileInfo()
-loadAudioFile()
+getMode()
