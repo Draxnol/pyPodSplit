@@ -19,5 +19,3 @@ class FileHandler():
             startSlice = i
             toExport.export(fileVarName, format='mp3')
             print(fileVarName + ' done')
-
-

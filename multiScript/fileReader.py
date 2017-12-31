@@ -16,8 +16,11 @@ class FileReader():
                     elif index > 0:
                         if index%2 == 0:
                             #append timestamp to array
-                            intNum = int(data)
-                            storyTimes.append(intNum * 60000)
+                            if data == 'stop':
+                                storyTimes.append('stop')
+                            else:
+                                intNum = int(data)
+                                storyTimes.append(intNum * 60000)
                         else:
                             #append storyNames
                             storyNames.append(data)
@@ -35,17 +38,23 @@ class FileReader():
         #load file
         startSlice = 0
         file = AudioSegment.from_file(fileName)
-        ####
+        ###-###-###
         x = str(fileName)
         splitFileName = x.split('.')
         dirName = './files/{}'.format(splitFileName[0])
         os.mkdir(dirName)
-          
+        ###-###-###
         for index, name in enumerate(storyNames):
-            print(str(index) + ' ' + name + ' done')
             #format pathname where files will go
             fileSplitName = '{}/{}.mp3'.format(dirName,name)
-            toExport = file[startSlice:int(storyTimes[index])]
+            ###Timing###            
+            if storyTimes[index] == 'stop':
+                toExport = file[startSlice:]
+            else:
+                toExport = file[startSlice:int(storyTimes[index])]
             startSlice = storyTimes[index]
             toExport.export(fileSplitName, format='mp3')
+            
+            print(str(index) + ' ' + name + ' done')
+
         return 'done ' + fileName
